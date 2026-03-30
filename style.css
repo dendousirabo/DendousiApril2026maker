@@ -9,7 +9,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
 
-/*要素の設定*/
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--bg-color);
@@ -21,18 +20,18 @@ body {
   align-items: center;
 
   user-select: none;
-  -webkit-touch-callout: none; /* iOS Safari: 長押しメニュー（コピー等）を無効化 */
-  -webkit-user-select: none;   /* Safari / Chrome / Edge (Legacy) */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer / Edge */
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 h1 {
-  font-size: 1.5rem; /* モバイル向けに縮小 */
+  font-size: 1.5rem; 
   margin: 15px;
   text-align: center;
 }
 p{
-  font-size : 1.1rem; /* モバイル向けに縮小 */
+  font-size : 1.1rem; 
   margin: 10px;
 }
 span{
@@ -51,7 +50,6 @@ button {
     cursor: pointer;
     font-weight: bold;
     transition: opacity 0.2s;
-    /*width: 168px;*/
 }
 button:disabled {
     opacity: 0.5;
@@ -59,29 +57,26 @@ button:disabled {
 }
 
 
-/*レイアウト順に設定*/
 #title{
   font-size: 1.35rem;
 }
 
 .container {
   background-color: var(--card-bg);
-  padding: 15px; /* パディングを抑える */
+  padding: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   max-width: 820px;
-  /*min-height: 85vh;*/
   width: 100%;
   box-sizing: border-box;
   position: relative;
 }
 
-/* プレビューエリア */
 .preview-container {
   width: 95%;
   display: flex;
   justify-content: center;
-  background-color: #aaa; /* 透明部分確認用 */
+  background-color: #aaa; 
   border-radius: 8px;
   overflow: hidden;
   border: var(--radenA-color) solid 4px;
@@ -90,7 +85,6 @@ button:disabled {
   margin: auto;
 }
 
-/* エディター選択タブエリア */
 #tab-container{
   font-size: 0.85rem;
   display: flex;
@@ -127,7 +121,6 @@ button:disabled {
 }
 .tool-container{
   align-items: center;
-  /*height: 17.5vh;*/
 }
 .tool-container[aria-hidden="true"]{
   display: none;
@@ -136,14 +129,13 @@ button:disabled {
   display: block;
 }
 
-/* フレーム選択エリア */
 .frame-selector {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    -webkit-overflow-scrolling: touch; /* スマホでのスクロール慣性 */
+    -webkit-overflow-scrolling: touch;
 }
 .frame-option {
     width: 100px;
@@ -174,7 +166,6 @@ button:disabled {
     border-color: var(--primary-color);
 }
 
-/* アップロードエリア */
 .upload-area {
   display: flex;
   flex-direction: column;
@@ -204,10 +195,9 @@ input[type="file"] {
   border-radius: 10px;
   font-weight: bold;
   display: inline-block;
-  pointer-events: none; /* 親のlabelをクリックさせるため */
+  pointer-events: none;
 }
 
-/*名前入力エリア*/
 #nameInput{
   width: 50%;
   margin-left: 30px;
@@ -219,34 +209,30 @@ input[type="file"] {
 #fontSizer label{
   font-size : 1.1rem;
 }
-/* 1. 全体のリセット */
 input[type="range"] {
-  -webkit-appearance: none; /* ブラウザ標準の見た目を消す */
+  -webkit-appearance: none;
   appearance: none;
-  background: transparent;  /* 背景を透明に */
+  background: transparent; 
   cursor: pointer;
   width: 60%;
 }
-/* 2. 溝（Track）のデザイン */
 input[type="range"]::-webkit-slider-runnable-track {
-  background: #ddd;         /* 溝の色（薄いグレー） */
-  height: 8px;              /* 溝の太さ */
-  border-radius: 4px;       /* 角を丸く */
+  background: #ddd; 
+  height: 8px; 
+  border-radius: 4px; 
 }
-/* 3. つまみ（Thumb）のデザイン */
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* 標準のつまみを消す */
+  -webkit-appearance: none;
   appearance: none;
-  margin-top: -6px;         /* 溝の真ん中に来るように調整 */
-  background-color: var(--primary-color); /* つまみの色 */
-  height: 20px;             /* つまみの高さ */
-  width: 20px;              /* つまみの幅 */
-  border-radius: 50%;       /* 丸くする */
-  border: 2px solid #fff;   /* 白いフチをつけて見やすく */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* 軽い影 */
+  margin-top: -6px; 
+  background-color: var(--primary-color); 
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
-/* アクションボタン */
 .actions {
     display: flex;
     gap: 20px;
@@ -270,19 +256,13 @@ input[type="range"]::-webkit-slider-thumb {
     max-width: 100%;
     height: auto;
     display: block;
-    /*user-select: auto;*/
-    -webkit-touch-callout: default; /* iOS Safari: 長押しメニュー（コピー等）を無効化 */
-    /*-webkit-user-select: auto;*/   /* Safari / Chrome / Edge (Legacy) */
-    /*-moz-user-select: auto;*/      /* Firefox */
-    /*-ms-user-select: auto;*/       /* Internet Explorer / Edge */
+    -webkit-touch-callout: default; 
 }
 
-/* マウスを乗せた時に少し色を変える（おまけ） */
 input[type="range"]:active::-webkit-slider-thumb {
   background-color: #e5533d;
 }
 
-/*クレジット関連*/
 #credit{
   font-size: 1rem;
   margin: -5px 25px;
@@ -301,7 +281,7 @@ a{
 }
 
 #howtoBtn{
-  width: 80px;  /* モバイルで邪魔にならないサイズに */
+  width: 80px;
   height: 80px;
   position: fixed;
   bottom: 1%;
@@ -314,20 +294,15 @@ a{
   justify-content: center;
 }
 #howto{
-  /* 1. 位置を固定する */
   position: fixed;
   top: 0;
   left: 0;
-  /* 2. 画面いっぱいに広げる */
   width: 100%;
-  height: 100vh; /* 画面の高さ100% */
-  /* 3. 背景色の設定（半透明など） */
-  background-color: rgba(0, 0, 0, 0.5); /* 黒の50%透明 */
-  /* 4. 中身を中央寄せにする（前述のFlexbox） */
+  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* 5. 他の要素より手前に出す */
   z-index: 9999;
 }
 #howto[aria-hidden="false"]{
@@ -370,9 +345,6 @@ margin: auto;
 }
 
 
-/* ブラウザ調整 */
-
-/*スマホ横向け*/
 @media ((min-width: 650px) and (max-height: 420px)){
   #title { font-size: 1.5rem; }
   .container-sideways{
@@ -436,8 +408,7 @@ margin: auto;
   }
 }
 
-/*デスクトップ向け*/
-@media (min-width: 1024px) {/*1024*/
+@media (min-width: 1024px) {
   #title {
      font-size: 2rem; 
   }
@@ -469,8 +440,6 @@ margin: auto;
   .preview-container {
     margin: auto;
     width: 65%;
-    /*align-items: center;*/
-    /*margin: 50px;*/
   }
   .actions button{
     font-size:1.6rem;
@@ -491,24 +460,19 @@ margin: auto;
     font-size: 1.6rem;
   }
   #howto{
-    /* 1. 位置を固定する */
     position: fixed;
     top: 0;
     left: 0;
     
-    /* 2. 画面いっぱいに広げる */
     width: 100%;
-    height: 100vh; /* 画面の高さ100% */
+    height: 100vh;
     
-    /* 3. 背景色の設定（半透明など） */
-    background-color: rgba(0, 0, 0, 0.5); /* 黒の50%透明 */
+    background-color: rgba(0, 0, 0, 0.5);
     
-    /* 4. 中身を中央寄せにする（前述のFlexbox） */
     display: flex;
     align-items: center;
     justify-content: center;
     
-    /* 5. 他の要素より手前に出す */
     z-index: 9999;
   }
   .howto-contents{
@@ -566,7 +530,6 @@ margin: auto;
   .container {
     padding: 30px;
     max-width: 900px;
-    /* height: 85vh; コンテンツ量に合わせて可変にするのが安全 */
   }
 
   h1 {
@@ -592,8 +555,6 @@ margin: auto;
   .preview-container {
     margin: auto;
     width: 75%;
-    /*align-items: center;*/
-    /*margin: 50px;*/
   }
   .actions button{
     font-size:1.6rem;
@@ -616,24 +577,19 @@ margin: auto;
     background-image: radial-gradient(circle, var(--primary-color) 60%, transparent 61%);
   }
   #howto{
-    /* 1. 位置を固定する */
     position: fixed;
     top: 0;
     left: 0;
     
-    /* 2. 画面いっぱいに広げる */
     width: 100%;
-    height: 100vh; /* 画面の高さ100% */
+    height: 100vh;
     
-    /* 3. 背景色の設定（半透明など） */
-    background-color: rgba(0, 0, 0, 0.5); /* 黒の50%透明 */
+    background-color: rgba(0, 0, 0, 0.5);
     
-    /* 4. 中身を中央寄せにする（前述のFlexbox） */
     display: flex;
     align-items: center;
     justify-content: center;
     
-    /* 5. 他の要素より手前に出す */
     z-index: 9999;
   }
   .howto-contents{
