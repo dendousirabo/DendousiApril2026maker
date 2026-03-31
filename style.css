@@ -417,7 +417,7 @@ margin: auto;
     max-width: 900px;
   }
   .tool-container{
-    height: 22vh;
+    /*height: 22vh;*/
   }
   .finish-container{
     margin: 10px;
